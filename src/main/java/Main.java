@@ -43,9 +43,9 @@ public class Main {
         thread2.start();
         thread3.start();
 
-        thread1.join();
-        thread2.join();
         thread3.join();
+        thread2.join();
+        thread1.join();
 
         System.out.printf("Красивых слов с длиной 3: %d шт", lengthThree.get());
         System.out.printf("\nКрасивых слов с длиной 4: %d шт", lengthFour.get());
