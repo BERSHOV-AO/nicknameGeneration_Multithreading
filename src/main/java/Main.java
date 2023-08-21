@@ -18,15 +18,7 @@ public class Main {
         Thread thread1 = new Thread(() -> {
             for (String str : texts) {
                 if (isWordPalindrome(str)) {
-                    if (str.length() == 3) {
-                        lengthThree.getAndAdd(1);
-                    }
-                    if (str.length() == 4) {
-                        lengthFour.getAndAdd(1);
-                    }
-                    if (str.length() == 5) {
-                        lengthFive.getAndAdd(1);
-                    }
+                    beautifulWordsCount(str);
                 }
             }
         });
@@ -34,15 +26,7 @@ public class Main {
         Thread thread2 = new Thread(() -> {
             for (String str : texts) {
                 if (isSameWorld(str)) {
-                    if (str.length() == 3) {
-                        lengthThree.getAndAdd(1);
-                    }
-                    if (str.length() == 4) {
-                        lengthFour.getAndAdd(1);
-                    }
-                    if (str.length() == 5) {
-                        lengthFive.getAndAdd(1);
-                    }
+                    beautifulWordsCount(str);
                 }
             }
         });
@@ -50,15 +34,7 @@ public class Main {
         Thread thread3 = new Thread(() -> {
             for (String str : texts) {
                 if (isAlphabeticalLetters(str)) {
-                    if (str.length() == 3) {
-                        lengthThree.getAndAdd(1);
-                    }
-                    if (str.length() == 4) {
-                        lengthFour.getAndAdd(1);
-                    }
-                    if (str.length() == 5) {
-                        lengthFive.getAndAdd(1);
-                    }
+                    beautifulWordsCount(str);
                 }
             }
         });
@@ -120,5 +96,17 @@ public class Main {
             }
         }
         return true;
+    }
+
+    public static void beautifulWordsCount(String str) {
+        if (str.length() == 3) {
+            lengthThree.getAndAdd(1);
+        }
+        if (str.length() == 4) {
+            lengthFour.getAndAdd(1);
+        }
+        if (str.length() == 5) {
+            lengthFive.getAndAdd(1);
+        }
     }
 }
